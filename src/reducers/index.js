@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux';
 
-// Reducer for the counter
 const counterReducer = (state = 0, action) => {
   switch (action.type) {
     case 'INCREMENT_COUNTER':
@@ -12,7 +11,6 @@ const counterReducer = (state = 0, action) => {
   }
 };
 
-// Combine all reducers into a rootReducer
 const rootReducer = combineReducers({
   counter: counterReducer,
 });

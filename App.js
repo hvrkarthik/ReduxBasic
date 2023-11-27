@@ -6,7 +6,6 @@ import store from './src/store';
 
 const { width, height } = Dimensions.get('window');
 
-// Counter component
 const Counter = ({ counter, increment, decrement }) => {
     return (
         <View>
@@ -18,31 +17,24 @@ const Counter = ({ counter, increment, decrement }) => {
             <View style={{ width: '50%', marginLeft: width * 0.2, marginTop: height * 0.0011 }}>
                 <Button title="-" onPress={decrement} />
             </View>
-            {/* <TouchableOpacity style={{color: 'red'}}>
-        <Text>hi</Text>
-      </TouchableOpacity> */}
         </View>
     );
 };
 
-// Map the Redux state to component props
 const mapStateToProps = state => ({
     counter: state.counter,
 });
 
-// Map the Redux actions to component props
 const mapDispatchToProps = {
     increment: incrementCounter,
     decrement: decrementCounter,
 };
 
-// Connect the component to Redux
 const ConnectedCounter = connect(
     mapStateToProps,
     mapDispatchToProps
 )(Counter);
 
-// App component
 const App = () => {
     return (
         <Provider store={store}>
